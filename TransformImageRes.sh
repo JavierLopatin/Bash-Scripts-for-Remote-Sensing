@@ -1,6 +1,6 @@
 # Created by Javier Lopatin (javierlopatin@gmail.com)
 #
-# A simple script to run GDAL Warp on a set of input images (tifs).
+# A simple script to run GDAL Warp on a set of input images.
 # This script is to be used when a transformation is specified in 
 # the image header and the file needs to be warped to apply the 
 # transformation.
@@ -18,6 +18,6 @@ do
   echo "Processing $f file..."
   filename=`basename ${f} .${3}`
   echo "Output: ${2}/${filename}.kea"
-  gdalwarp -r cubic -multi -wt Float32 -of KEA -tr $4 -$4 ${f} ${2}/${filename}.kea
-  gdalcalcstats ${2}/${filename}.kea -ignore 0
+  gdalwarp -r cubic -multi -wt Float32 -of GTiff -tr $4 -$4 ${f} ${2}/${filename}.tif
+  gdalcalcstats ${2}/${filename}.tif -ignore 0
 done
