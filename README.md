@@ -6,3 +6,9 @@
 - Convert all images in a dorectory to GTiff
   - sh Convert2TIFF.sh Input/directory/ Output/directoy/ inputFileExtension
 
+- Change the resolution information in the metadata:
+  - sh SetResolution.sh Input/directory/ Output/directoy/ outputResolution
+
+- Transform the raster resolution:
+  - sh TransformImageRes.sh Input/directory/ Output/directoy/ inputFileExtension outputResolution
+
